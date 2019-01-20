@@ -1,0 +1,1 @@
+### This collection of gist is some day to day script i write in pyhton

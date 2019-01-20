@@ -1,3 +1,6 @@
+from operator import attrgetter
+
+
 def sort_in_list_tuple():
     # Sort all different types of object
     li = [9, 1, 8, 2, 7, 3, 6, 4, 5]
@@ -58,9 +61,13 @@ def e_sort_salary(emp):
     return emp.salary
 
 
-s_employees = sorted(employees, key=lambda e: e.age, reverse=True)
+s_employees = sorted(employees, key=e_sort_name)
 # OR
-s_employees_lambda = sorted(employees, key=e_sort_salary)
+s_employees_lambda = sorted(employees, key=lambda e: e.age, reverse=True)
+# OR
+s_employees_attrgetter = sorted(employees, key=attrgetter('salary'))
 
 print(s_employees)
 print(s_employees_lambda)
+print(s_employees_attrgetter)
+
